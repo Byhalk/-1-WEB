@@ -28,7 +28,7 @@ Accept: application/json
 }
 
 ###
-# DELETE — симуляція видалення товару
+# DELETE — видалення товару
 DELETE {{base}}/products/1
 Accept: application/json
 
