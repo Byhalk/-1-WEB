@@ -7,7 +7,7 @@ GET {{base}}/products/1
 Accept: application/json
 
 ###
-# POST — створити тестовий товар (API повертає симульований результат)
+# POST — створити тестовий товар 
 POST {{base}}/products/add
 Content-Type: application/json
 Accept: application/json
@@ -33,7 +33,7 @@ DELETE {{base}}/products/1
 Accept: application/json
 
 ###
-# GET — список товарів для дослідження DevTools
+# GET — список товарів для девтулсів
 GET {{base}}/products
 Accept: application/json
 
@@ -53,7 +53,7 @@ Accept: application/json
 }
 
 ###
-# Авторизація. Токен у відповіді не публікувати.
+# Авторизація.
 POST {{base}}/auth/login
 Content-Type: application/json
 Accept: application/json
@@ -64,7 +64,7 @@ Accept: application/json
 }
 
 ###
-# Відкрийте попередню відповідь, скопіюйте accessToken і підставте замість TOKEN.
+# Прошла відповідь1
 GET {{base}}/auth/me
 Authorization: Bearer TOKEN
 Accept: application/json
