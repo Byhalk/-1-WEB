@@ -10,8 +10,7 @@
 ## Вміст проєкту
 - `requests.http` — готові запити для розширення REST Client у VS Code.
 - `scripts/run-diagnostics.ps1` — команди для PowerShell: CRUD, автентифікація, таймінги, TLS, cookies, CORS.
-- `screenshots/` — сюди додати фактичні скриншоти виконання.
-- `Звіт_практична_1.docx` — звіт із місцями для вставлення скриншотів.
+- `Звіт_практична_1.docx` — звіт
 
 ## Підготовка середовища (Windows)
 1. Встановити/відкрити Visual Studio Code.
