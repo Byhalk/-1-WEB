@@ -42,8 +42,6 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 Скрипт виконує запити до публічних тестових API. Для запиту логіну використовується тестовий обліковий запис, наведений у методичці. Токен використовується лише в межах поточного запуску.
 
-Якщо команда `curl` у PowerShell запускає Invoke-WebRequest, використовуйте саме `curl.exe`.
-
 ## Рівень 3 — TLS, cookies, CORS
 Скрипт містить:
 - TLS-трасування через `curl.exe -v`;
@@ -51,45 +49,3 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 - запис і повторне надсилання cookies через cookie jar;
 - перевірку `Set-Cookie` з `HttpOnly`, `Secure`, `SameSite`;
 - OPTIONS Preflight із заголовками Origin та Access-Control-Request-*.
-
-Важливо: CORS — браузерна політика. `curl` лише надсилає OPTIONS і показує відповідь сервера; він сам не застосовує браузерні обмеження CORS.
-
-## Скріншоти для звіту
-Зробіть реальні скриншоти й надішліть їх у чат. Потрібні:
-1. `01_curl_version.png` — PowerShell із результатом `curl.exe --version`.
-2. `02_rest_get.png` — GET product, статус 200 і JSON.
-3. `03_rest_post.png` — POST product/add, статус 201 і повернений id.
-4. `04_rest_put_delete.png` — PUT і DELETE зі статусами та JSON-відповідями.
-5. `05_devtools_general.png` — Network → Headers → General для `/products`.
-6. `06_devtools_headers.png` — Request Headers і Response Headers.
-7. `07_devtools_timing.png` — вкладка Timing.
-8. `08_curl_crud_users.png` — GET users і POST posts/add у терміналі.
-9. `09_curl_status_codes.png` — заголовки для 404 та 500.
-10. `10_auth_token_me.png` — успішна автентифікація та `/auth/me` (токен замаскувати).
-11. `11_curl_timings.png` — DNS, TCP, TLS, TTFB, Total.
-12. `12_tls_verbose.png` — TLS handshake та дані сертифіката (без приватних даних).
-13. `13_http_redirect.png` — HTTP redirect та Location.
-14. `14_cookie_jar.png` — створений `cookies.txt` і відповідь `/cookies`.
-15. `15_cookie_security.png` — Set-Cookie з атрибутами.
-16. `16_cors_preflight.png` — OPTIONS і CORS response headers.
-17. `17_no_errors.png` — фінальний термінал/VS Code без помилок.
-
-Можна надсилати скриншоти частинами. Не обрізайте статус-коди, URL, заголовки або вивід, які потрібно перевірити. Не надсилайте повний access token — замаскуйте його.
-
-## Git
-У терміналі з кореня папки:
-```powershell
-git init
-git add .
-git commit -m "Complete practical work 1: HTTP and HTTPS diagnostics"
-```
-Публікацію на GitHub можна виконати після створення репозиторію на GitHub:
-```powershell
-git branch -M main
-git remote add origin https://github.com/USERNAME/REPOSITORY.git
-git push -u origin main
-```
-Замініть `USERNAME` і `REPOSITORY` на власні значення.
-
-## Контрольні питання
-Відповіді навмисно не включені до цього проєкту. Після завершення практичної роботи пройдемо контрольні питання у форматі тесту безпосередньо в чаті.
